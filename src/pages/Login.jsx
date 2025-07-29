@@ -2,14 +2,16 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "../utils/validation";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
-
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const { login } = useAuth();
 
+  const navigate = useNavigate();
   const handleLogin = async (values, { setSubmitting }) => {
     try {
-      await login(values);
-      toast.success("Login successful!");
+     await login(values);
+    toast.success("Login successful!");
+    navigate("/profile");
     } catch (e) {
       toast.error("Login failed");
     } finally {
@@ -37,4 +39,11 @@ export default function Login() {
       </Formik>
     </div>
   );
+
+
+
+// Inside handleLogin
+
+
+
 }

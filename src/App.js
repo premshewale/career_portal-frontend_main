@@ -3,6 +3,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import RegisterRole from "./pages/RegisterRole";
 import RegisterCandidate from "./pages/RegisterCandidate";
 import RegisterCompany from "./pages/RegisterCompany";
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/register/candidate" element={<RegisterCandidate />} />
           <Route path="/register/company" element={<RegisterCompany />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/profile" element={<Profile />} />/
         </Routes>
         <ToastContainer />
       </BrowserRouter>
