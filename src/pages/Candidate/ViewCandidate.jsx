@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import "../../styles/Candidate/viewcandidate.css"
+
 const ViewCandidates = () => {
   const [candidates, setCandidates] = useState([]);
 

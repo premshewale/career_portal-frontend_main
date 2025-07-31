@@ -1,6 +1,8 @@
 import { Formik, Form, Field } from "formik";
-import { registerCompany } from "../services/companyService";
+import { registerCompany } from "../../services/companyService";
 import { toast } from "react-toastify";
+
+import "../../styles/Company/registercompany.css"
 
 export default function RegisterCompany() {
   const handleRegister = async (values, { setSubmitting }) => {

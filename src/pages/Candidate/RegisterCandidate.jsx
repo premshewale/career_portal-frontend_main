@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/global.css';
+
+import "../../styles/Candidate/registercandidate.css"
 
 const RegisterCandidate = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ const RegisterCandidate = () => {
     gender: '',
     birthdate: '',
     education: '',
-    workexp: '', // ✅ corrected typo here
+    workexp: '', 
     skills: ''
   });
 
@@ -50,8 +51,8 @@ const RegisterCandidate = () => {
       'candidate',
       new Blob([JSON.stringify(dtoPayload)], { type: 'application/json' })
     );
-    if (resume) data.append('resume', resume); // ✅ match backend param name
-    if (photo) data.append('photo', photo);   // ✅ match backend param name
+    if (resume) data.append('resume', resume); 
+    if (photo) data.append('photo', photo);  
 
     try {
       const response = await axios.post('http://localhost:8080/candidate/register', data, {
