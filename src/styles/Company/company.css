@@ -1,0 +1,153 @@
+/* company.css - company profile / edit styles */
+
+.company-profile-container,
+.update-company-container {
+  max-width: 600px;
+  margin-bottom: 100px; /* so button doesn't hide behind footer */
+  margin: auto;
+  padding: 0 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+/* Card */
+.company-card,
+.update-card {
+  background: #fff;
+  
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(16, 45, 78, 0.07);
+  overflow: hidden;
+   
+}
+
+/* Header */
+.company-card-header,
+.update-header {
+  background: linear-gradient(90deg, #0d6efd, #1976d2);
+  color: white;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.company-card-header h2,
+.update-header h2 {
+  margin: 010;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Actions in header */
+.company-card-actions button {
+  margin-left: 8px;
+}
+
+/* Card body */
+.company-card-body {
+  padding: 20px;
+}
+.company-row {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  align-items: center;
+}
+.company-label {
+  width: 180px;
+  background: linear-gradient(90deg, rgba(13,110,253,.06), rgba(13,110,253,.03));
+  border-left: 4px solid #0d6efd;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #0d47a1;
+}
+.company-value {
+  flex: 1;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+/* Footer */
+.company-card-footer {
+  padding: 16px 20px 24px;
+  
+  display: flex;
+  justify-content: center;
+}
+
+/* Buttons common */
+.btn-primary {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.95; }
+
+.btn-secondary {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #1976d2;
+  border: 1px solid #dfeffc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Update form */
+.update-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.update-form input,
+.update-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eefb;
+  font-size: 14px;
+  background: #fbfdff;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* form actions */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* small screens */
+@media (max-width: 720px) {
+  .two-col { grid-template-columns: 1fr; }
+  .company-label { width: 140px; }
+}

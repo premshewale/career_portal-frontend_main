@@ -58,7 +58,7 @@ const RegisterCompany = () => {
         <input name="founded" placeholder="Founded" onChange={handleChange} />
         <textarea name="specialties" placeholder="Specialties" onChange={handleChange}></textarea>
         <textarea name="address" placeholder="Address" onChange={handleChange}></textarea>
-        <input name="companyPhone" placeholder="Phone" onChange={handleChanggite} />
+        <input name="companyPhone" placeholder="Phone" onChange={handleChange} />
         <button type="submit">Register</button>
       </form>
     </div>

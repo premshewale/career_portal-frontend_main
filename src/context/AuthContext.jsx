@@ -1,7 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import axios from "axios";
-
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
 const AuthContext = createContext();
@@ -12,76 +9,64 @@ export function AuthProvider({ children }) {
     return storedUser ? JSON.parse(storedUser) : null;
   });
 
-  export function AuthProvider({ children }) {
   const [company, setCompany] = useState(() => {
-    const saved = localStorage.getItem("company");
-    return saved ? JSON.parse(saved) : null;
+    const storedCompany = localStorage.getItem("company");
+    return storedCompany ? JSON.parse(storedCompany) : null;
   });
 
-  const login = async ({ email, password }) => {
-    const res = await axios.post("http://localhost:8080/candidate/login", {
-      email,
-      password,
-    });
+  const loginUser = async ({ email, password }) => {
+    const res = await axios.post("http://localhost:8080/candidate/login", { email, password });
     setUser(res.data);
     localStorage.setItem("user", JSON.stringify(res.data));
   };
 
-
-  const login = async ({ email, password }) => {
+  const loginCompany = async ({ email, password }) => {
     const res = await axios.post("http://localhost:8080/company/login", { email, password });
     setCompany(res.data);
     localStorage.setItem("company", JSON.stringify(res.data));
   };
 
-  const logout = (onLogoutComplete) => {
-  localStorage.removeItem("user");
-  setUser(null);
-  if (onLogoutComplete) {
-    onLogoutComplete();
-  } else {
-    window.location.href = "/"; // fallback redirect
-  }
-};
+  const logoutUser = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
 
-
-const logout = () => {
+  const logoutCompany = () => {
     setCompany(null);
     localStorage.removeItem("company");
   };
 
- useEffect(() => {
-  const storedUser = localStorage.getItem("user");
-  if (storedUser) {
+  // ✅ Unified logout function
+  const logout = () => {
+    logoutUser();
+    logoutCompany();
+  };
+
+  useEffect(() => {
     try {
-      const parsedUser = JSON.parse(storedUser);
-      if (parsedUser) {
-        setUser(parsedUser);
-      }
-    } catch (e) {
+      const storedUser = localStorage.getItem("user");
+      if (storedUser) setUser(JSON.parse(storedUser));
+    } catch {
       localStorage.removeItem("user");
     }
-  }
-}, []);
 
+    try {
+      const storedCompany = localStorage.getItem("company");
+      if (storedCompany) setCompany(JSON.parse(storedCompany));
+    } catch {
+      localStorage.removeItem("company");
+    }
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-
-return (
-    <AuthContext.Provider value={{ company, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, company, loginUser, loginCompany, logoutUser, logoutCompany, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
 }
 
-
-
-
-
-
-
-export const useAuth = () => useContext(AuthContext);
+export function useAuth() {
+  return useContext(AuthContext);
+}

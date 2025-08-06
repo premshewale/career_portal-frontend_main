@@ -1,34 +1,29 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-
 
 export default function Navbar() {
-  const { user, logout } = useContext(AuthContext);
-  const navigate = useNavigate(); // for navigation after logout
+  const { user, company, logout } = useAuth(); // ✅ include company
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();              // Clears user context
-    localStorage.clear();  // Optional: clear local storage
-    navigate("/login");    // Redirect to login
+    logout();               // ✅ unified logout
+    localStorage.clear();   // optional
+    navigate("/login");
   };
-
-
-  // const handleLogout = () => {
-  // logout(() => navigate("/"));
-  // };
 
   return (
     <nav className="navbar">
       <Link to="/">CareerPortal</Link>
-      <div>
+      <div> 
+        <Link to="/">Home</Link>
         <Link to="/jobs">Jobs</Link>
         <Link to="/companies">Companies</Link>
-        {user ? (
+       
+        <Link to="/report">Report</Link>
+
+        {user || company ? (
           <>
-            <Link to="/dashboard">Profile</Link>
+            <Link to={user ? "/candidate" : "/company"}>Profile</Link>
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
