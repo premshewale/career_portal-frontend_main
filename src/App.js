@@ -14,11 +14,20 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UpdateCandidate from "./pages/Candidate/UpdateCandidate";
 
-import RegisterCompany from "./pages/Company/RegisterCompany";
 
+import RegisterCompany from "./pages/Company/RegisterCompany";
 import CompanyList from "./pages/Company/CompanyList";
 import CompanyProfile from "./pages/Company/CompanyProfile";
 import UpdateCompany from "./pages/Company/UpdateCompany";
+import CompanyDashboard from "./pages/Company/CompanyDashboard";
+import PostJob from "./pages/Company/PostJob";
+import ApplicantsList from "./pages/Company/ApplicantsList";
+
+
+
+// Jobs
+import JobList from "./pages/Job/JobList";
+import JobDetails from "./pages/Job/JobDetails";
 
 
 export default function App() {
@@ -42,8 +51,15 @@ export default function App() {
         <Route path="/company/all" element={<CompanyList />} />
         <Route path="/company" element={<CompanyProfile />} />
         <Route path="/company/update/:id" element={<UpdateCompany />} />
+         <Route path="/company/dashboard" element={<CompanyDashboard />} />
+        <Route path="/company/postjob" element={<PostJob />} />
+        <Route path="/company/job/:jobId/applicants" element={<ApplicantsList />} />
 
        
+         <Route path="/jobs" element={<JobList />} />
+        <Route path="/jobs/:id" element={<JobDetails />} />
+
+
         </Routes>
          <Footer/>
         <ToastContainer />
