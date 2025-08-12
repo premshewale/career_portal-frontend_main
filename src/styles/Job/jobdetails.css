@@ -1,0 +1,93 @@
+/* Job Details Container */
+.job-details-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  
+}
+
+/* Job Card */
+.job-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Job Title */
+.job-card h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+/* Job Location */
+.job-location {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* Description */
+.job-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+/* Salary & Posted Date */
+.job-card p {
+  font-size: 15px;
+  color: #374151;
+  margin: 5px 0;
+}
+
+/* Apply Button */
+.apply-btn {
+  margin-top: 20px;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.apply-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.apply-btn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Loading & Error States */
+.job-details-loading,
+.job-details-error {
+  text-align: center;
+  font-size: 18px;
+  padding: 50px;
+  color: #6b7280;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

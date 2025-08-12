@@ -1,0 +1,21 @@
+/* postjob.css */
+.postjob-wrapper { max-width:720px; margin: 30px auto; }
+.postjob-card { background:#fff; border-radius:10px; padding:22px; box-shadow: 0 10px 30px rgba(20,40,70,0.06); }
+
+.postjob-card h3 { text-align:center; margin-bottom:18px; color:#133; }
+
+.postjob-card form input,
+.postjob-card form textarea {
+  width:100%;
+  padding:10px 12px;
+  margin-bottom:12px;
+  border-radius:8px;
+  border:1px solid #e6eef9;
+  background:#fbfdff;
+  font-size:14px;
+  box-sizing:border-box;
+}
+
+.postjob-card form textarea { min-height:120px; resize:vertical; }
+
+.postjob-actions { display:flex; gap:10px; justify-content:center; margin-top:8px; }

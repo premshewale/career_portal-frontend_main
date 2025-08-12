@@ -5,12 +5,18 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%; /* Needed for footer positioning */
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #e3f2fd, #fce4ec);
   color: #333;
-  min-height: 100vh;
   line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navbar */
@@ -47,40 +53,12 @@ body {
 
 .navbar button:hover {
   background: #1565c0;
-  
 }
-
-
-
-
-
-
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #0d47a1;
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  font-size: 0.9rem;
+main {
+  flex: 1; /* Push footer to bottom */
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .home-card,
-  .form-card {
-    margin: 30px auto;
-    width: 90%;
-  }
-} 
 
 .footer {
   display: flex;
@@ -92,6 +70,10 @@ footer {
   color: #fff;
   font-size: 0.9rem;
   text-align: center;
+  width: 100%;
+    position: fixed;
+    bottom: 0;
+  left: 0;
 }
 
 .footer-links {
@@ -126,7 +108,20 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
+  .home-card,
+  .form-card {
+    margin: 30px auto;
+    width: 90%;
+  }
+}
+
+/* Form card */
 .form-card {
   display: flex;
   flex-direction: column;

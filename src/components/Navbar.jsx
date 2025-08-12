@@ -17,9 +17,9 @@ export default function Navbar() {
       <div> 
         <Link to="/">Home</Link>
         <Link to="/jobs">Jobs</Link>
-        <Link to="/companies">Companies</Link>
+        <Link to="/company/all">Companies</Link>
        
-        <Link to="/report">Report</Link>
+        <Link to="/viewcandidate">Report</Link>
 
         {user || company ? (
           <>

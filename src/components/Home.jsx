@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
           <a href="/register">Register</a>
         </div>
       </div>
-      <Footer /> {/* Footer added here */}
+    
     </div>
   );
 }

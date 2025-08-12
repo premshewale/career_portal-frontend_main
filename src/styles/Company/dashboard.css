@@ -1,0 +1,35 @@
+/* dashboard.css */
+.dashboard-header { display:flex; justify-content:space-between; align-items:center; margin: 18px 0; }
+.post-job-btn { background:#1e7f3f; color:#fff; padding:8px 12px; border-radius:8px; }
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(20,40,70,0.06);
+}
+
+.jobs-table th, .jobs-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #f4f7fb;
+  font-size:14px;
+}
+
+.jobs-table thead th {
+  background: #f8fbff;
+  color: #233;
+  font-weight:700;
+}
+
+.table-actions button { margin-right:8px; }
+.small-badge {
+  display:inline-block;
+  background:#eef6ff;
+  color:#2176f7;
+  padding:4px 8px;
+  border-radius:12px;
+  font-size:12px;
+}

@@ -29,7 +29,11 @@ export default function CompanyDashboard(){
       </div>
 
       <table className="jobs-table">
-        <thead><tr><th>Title</th><th>Location</th><th>Posted On</th><th>Applications</th><th>Actions</th></tr></thead>
+        <thead><tr><th>Title</th>
+        <th>Location</th>
+        <th>Posted On</th>
+        <th>Applications</th>
+        <th>Actions</th></tr></thead>
         <tbody>
           {jobs.map(job => (
             <tr key={job.id}>

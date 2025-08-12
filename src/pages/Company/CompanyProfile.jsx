@@ -39,7 +39,7 @@ export default function CompanyProfile() {
         <div className="company-card-header">
           <h2>Company Profile</h2>
           <div className="company-card-actions">
-            <button className="btn-primary" onClick={() => navigate("/company/all")}>All Companies</button>
+            <button className="btn-primary" onClick={() => navigate("/company/postjob")}> + Post a New Job</button>
             <button className="btn-secondary" onClick={() => navigate(`/company/update/${companyData.id}`)}>Edit Profile</button>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function CompanyProfile() {
         </div>
 
         <div className="company-card-footer">
-          <button className="btn-outline" onClick={() => navigate("/company")}>
+          <button className="btn-outline" onClick={() => navigate("/company/dashboard")}>
             Go to Company Dashboard
           </button>
         </div>

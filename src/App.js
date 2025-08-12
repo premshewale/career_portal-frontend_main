@@ -8,12 +8,12 @@ import Profile from "./pages/Candidate/CandidateProfile";
 import RegisterRole from "./components/RegisterRole";
 import RegisterCandidate from "./pages/Candidate/RegisterCandidate";
 
-import Dashboard from "./components/Dashboard";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UpdateCandidate from "./pages/Candidate/UpdateCandidate";
-
+import ViewCandidate from "./pages/Candidate/ViewCandidate"
 
 import RegisterCompany from "./pages/Company/RegisterCompany";
 import CompanyList from "./pages/Company/CompanyList";
@@ -41,9 +41,10 @@ export default function App() {
           <Route path="/register" element={<RegisterRole />} />
           <Route path="/register/candidate" element={<RegisterCandidate />} />
           <Route path="/register/company" element={<RegisterCompany />} />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+
           <Route path="/candidate" element={<Profile />} />
           <Route path="/updatecandidate/:id" element={<UpdateCandidate />} />
+           <Route path="/viewcandidate" element={<ViewCandidate />} />
 
 
         
@@ -57,13 +58,15 @@ export default function App() {
 
        
          <Route path="/jobs" element={<JobList />} />
-        <Route path="/jobs/:id" element={<JobDetails />} />
-
-
+        <Route path="/apply/:id" element={<JobDetails />} />
+    
+         
         </Routes>
-         <Footer/>
+       
         <ToastContainer />
       </BrowserRouter>
+        <Footer/>
     </AuthProvider>
+    
   );
 }
