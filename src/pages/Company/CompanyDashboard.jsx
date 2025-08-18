@@ -25,7 +25,7 @@ export default function CompanyDashboard(){
     <div className="dashboard" >
       <div style={{display:'flex', justifyContent:'space-between'}}>
         <h3>Your Posted Jobs</h3>
-        <button className="post-job-btn" onClick={()=> navigate('/company/post-job')}> + Post New Job</button>
+        <button className="post-job-btn" onClick={()=> navigate('/company/postjob')}> + Post New Job</button>
       </div>
 
       <table className="jobs-table">

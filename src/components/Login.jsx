@@ -49,8 +49,8 @@ export default function Login() {
         onSubmit={handleLogin}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <div>
+          <Form > 
+            <div >
               <Field  name="email" type="email" placeholder="Email" />
               <ErrorMessage name="email" component="div" className="error" />
             </div>

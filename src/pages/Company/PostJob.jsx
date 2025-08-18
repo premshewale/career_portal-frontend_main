@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import api from "../../api/axios";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
+import "../../styles/Company/postjob.css"; // optional: for styles
+
+
 
 export default function PostJob(){
   const { company } = useAuth();

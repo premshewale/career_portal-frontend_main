@@ -28,7 +28,10 @@ import ApplicantsList from "./pages/Company/ApplicantsList";
 // Jobs
 import JobList from "./pages/Job/JobList";
 import JobDetails from "./pages/Job/JobDetails";
+import EditJob from "./pages/Job/EditJob";
 
+
+//import ReportPage from "./pages/Reports/ReportPage";
 
 export default function App() {
   return (
@@ -59,8 +62,11 @@ export default function App() {
        
          <Route path="/jobs" element={<JobList />} />
         <Route path="/apply/:id" element={<JobDetails />} />
-    
-         
+         <Route path="/company/job/edit/:jobId" element={<EditJob />} />
+
+           {/* <Route path="/report/:jobId" element={<ReportPage />} /> */}
+
+
         </Routes>
        
         <ToastContainer />

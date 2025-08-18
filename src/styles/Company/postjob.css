@@ -1,21 +1,116 @@
-/* postjob.css */
-.postjob-wrapper { max-width:720px; margin: 30px auto; }
-.postjob-card { background:#fff; border-radius:10px; padding:22px; box-shadow: 0 10px 30px rgba(20,40,70,0.06); }
 
-.postjob-card h3 { text-align:center; margin-bottom:18px; color:#133; }
+
+form {
+  margin-top: 100px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  resize: none;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+}
+
+
+
+.postjob-wrapper {
+  max-width: 720px;
+  margin: 100px auto 30px auto; /* margin from navbar */
+  padding: 0 15px;
+}
+
+.postjob-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(20, 40, 70, 0.06);
+}
+
+.postjob-card h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #133;
+  font-weight: bold;
+  background: #1976d2;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+}
 
 .postjob-card form input,
 .postjob-card form textarea {
-  width:100%;
-  padding:10px 12px;
-  margin-bottom:12px;
-  border-radius:8px;
-  border:1px solid #e6eef9;
-  background:#fbfdff;
-  font-size:14px;
-  box-sizing:border-box;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef9;
+  background: #fbfdff;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-.postjob-card form textarea { min-height:120px; resize:vertical; }
+.postjob-card form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 
-.postjob-actions { display:flex; gap:10px; justify-content:center; margin-top:8px; }
+.postjob-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.postjob-actions button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.postjob-actions button:hover {
+  background: #1b5e20;
+}

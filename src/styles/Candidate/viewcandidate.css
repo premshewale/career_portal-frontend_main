@@ -1,0 +1,65 @@
+.view-candidates-container {
+  padding: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.candidate-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.candidate-photo {
+  width: 120px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Access Denied styles */
+.access-denied {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.access-card {
+  background: #ffe6e6;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(255,0,0,0.1);
+}
+
+.access-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.access-card h2 {
+  color: #d9534f;
+}
+
+.access-card p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.access-card button {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
