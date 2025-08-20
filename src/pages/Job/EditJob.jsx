@@ -24,7 +24,7 @@ export default function EditJob() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    api.put(`/jobs/edit/${jobId}`, job)
+    api.put(`/jobs/${jobId}/edit`, job)
       .then(() => navigate("/company/dashboard"))
       .catch((err) => console.error("Error updating job:", err));
   };
