@@ -1,65 +1,218 @@
 .view-candidates-container {
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+   padding-bottom: 80px; /* extra bottom space */
 }
 
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1a73e8;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title::before {
+  content: "👤";
+  margin-right: 8px;
+}
+
+
+/* Filter row styling */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters-row select,
+.filters-row input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filters-row input[type="date"] {
+  padding: 7px 10px;
+}
+
+
+.search-btn {
+  background: #1a73e8;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.search-btn:hover {
+  background: #155ab6;
+}
+
+.export-btn {
+  background: #34a853;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.export-btn:hover {
+  background: #2c8b44;
+}
+/* Search input */
 .search-input {
   padding: 10px;
   width: 100%;
   max-width: 400px;
-  margin-bottom: 15px;
+  margin: 15px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
 }
-
-.candidate-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin: 10px 0;
+/* Candidate Table */
+.candidate-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #fff;
   border-radius: 8px;
-  background: #fafafa;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.candidate-photo {
-  width: 120px;
-  border-radius: 10px;
-  margin-top: 10px;
+.candidate-table th, 
+.candidate-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
 }
 
-/* Access Denied styles */
-.access-denied {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+.candidate-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
 }
 
-.access-card {
-  background: #ffe6e6;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(255,0,0,0.1);
+.candidate-table tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
-.access-icon {
-  font-size: 40px;
-  margin-bottom: 10px;
+.candidate-table tr:hover {
+  background-color: #f1f1f1;
 }
 
-.access-card h2 {
-  color: #d9534f;
-}
-
-.access-card p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.access-card button {
-  background: #007bff;
+/* Button Style */
+.view-btn {
+  padding: 6px 12px;
+  background-color: #1a73e8;
   color: white;
-  padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 13px;
+}
+.view-btn:hover {
+  background-color: #155ab6;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  background: #d9363e;
+}
+
+/* Resume Viewer */
+.resume-frame {
+  width: 800px;
+  max-width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Candidate Photo Preview */
+.candidate-photo-large {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+/* Pagination */
+.pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.page-btn:hover {
+  background: #f1f1f1;
+}
+
+.page-btn.active {
+  background: #1a73e8;
+  color: white;
+  border-color: #1a73e8;
 }
